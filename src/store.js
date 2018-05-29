@@ -1,11 +1,16 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { reducer as formReducer } from 'redux-form';
+import userReducer from './reducers/userReducer'
+import thunk from 'redux-thunk';
+
 
 export default createStore(
   combineReducers({
-    form: formReducer  
+    form: formReducer,
+    user: userReducer  
   }),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  applyMiddleware(thunk)
 );
 
 // userReducer keeps the values of the form fields updated within the state
