@@ -1,7 +1,7 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
 import './user-creation-form.css'
-
+import { required, nonEmpty } from '../validators'
 
 export class UserCreation extends React.Component {
   onSubmit(values) {
@@ -14,12 +14,24 @@ export class UserCreation extends React.Component {
         <form onSubmit={this.props.handleSubmit(values =>
           this.onSubmit(values)
         )}>
-          <label htmlFor="fullname">Full name</label>
-          <Field name="fullname" id="fullname" type="text" component="input" />
+          {/* <label htmlFor="fullname">Full name</label> */}
+          {/* <Field name="fullname" id="fullname" type="text" component="input" /> */}
           <label htmlFor="username">Username</label>
-          <Field name="username" id="username" type="text" component="input" />
+          <Field 
+            name="username" 
+            id="username" 
+            type="text" 
+            component="input"
+            validate={[required, nonEmpty]}
+            />
           <label htmlFor="password">Password</label>
-          <Field name="password" id="password" type="text" component="input" />
+          <Field 
+            name="password" 
+            id="password" 
+            type="text" 
+            component="input" 
+            validate={[required, nonEmpty]}
+          />
           <button type="submit">SUBMIT</button>
         </form>
       </div>
