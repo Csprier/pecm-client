@@ -15,6 +15,6 @@ export const listAllStudents = () => dispatch => {
     body: JSON.stringify()
   })
   .then(res => res.json())
-  .then(json => dispatch(getAllStudents(json)))
+  .then(json => dispatch(getAllStudents(json))) // pass in json to pass in the data
   .catch(err => console.error(err));
 }
