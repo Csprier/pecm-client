@@ -5,13 +5,21 @@ import store from './store';
 import './index.css';
 import UserCreation from './components/user-creation-form';
 import UserLogin from './components/user-login-form';
+import UserControls from './components/user-controls';
+
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+import Routes from './routes';
 
 ReactDOM.render(
   <Provider store={store}>
-    <div className="user-creation-login">
-      <UserCreation />
-      <UserLogin />
-    </div>
+   <Router>
+      <div className="user-creation-login">
+        <Route exact path="/" component={UserCreation} /> 
+        <Route exact path="/" component={UserLogin} />
+        <Route path="/UserControls" component={UserControls} />  
+      </div>
+    </Router>
   </Provider>, 
   document.getElementById('root')
 );

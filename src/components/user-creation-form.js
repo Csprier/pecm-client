@@ -1,6 +1,6 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
-import './user-creation-form.css'
+import './css/user-creation-form.css'
 import { required, nonEmpty } from '../validators'
 import { registerNewUserHandler } from '../actions/users';
 
@@ -13,7 +13,7 @@ export class UserCreation extends React.Component {
   render() {
     return (
       <div className="user-creation-form">
-      <h2>Create an Account</h2>
+        <h2>Create an Account</h2>
         <form onSubmit={this.props.handleSubmit(values =>
           this.onSubmit(values)
         )}>
@@ -40,12 +40,14 @@ export class UserCreation extends React.Component {
             component="input" 
             validate={[required, nonEmpty]}
           />
-          <button type="submit">SUBMIT</button>
+          <button type="submit">CREATE ACCOUNT</button>
         </form>
       </div>
     );
   }
 }
+
+
 
 export default reduxForm({
   form: 'userCreation'

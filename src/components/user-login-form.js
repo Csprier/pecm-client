@@ -1,12 +1,14 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
-import './user-login-form.css'
+import './css/user-login-form.css'
 import { loginUserHandler } from '../actions/users'
+import { browserHistory } from 'react-router';
 
 export class UserLogin extends React.Component {
   onSubmit(values) {
-    console.log(values);
     this.props.dispatch(loginUserHandler(values.username, values.password))
+    // After the loginUserHandler action is dispatched, push the /usercontrols route to the history
+    this.props.history.push('/UserControls'); 
   }
 
   render() {
@@ -30,7 +32,7 @@ export class UserLogin extends React.Component {
             type="text" 
             component="input" 
           />
-          <button type="submit">SUBMIT</button>
+          <button type="submit">LOG IN</button>
         </form>
       </div>
     );
