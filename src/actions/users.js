@@ -54,6 +54,3 @@ export const loginUserHandler = (username, password) => dispatch => {
   .then(({ authToken }) => dispatch(loginUserSuccess(username, authToken)))
   .catch(err => console.error(err));
 }
-
-// Why does my Network tab only show an OPTIONS request in the header, instead of a POST.
-// How can I set the content-type of my request with CORS?

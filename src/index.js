@@ -9,8 +9,6 @@ import UserControls from './components/user-controls';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import Routes from './routes';
-
 ReactDOM.render(
   <Provider store={store}>
    <Router>

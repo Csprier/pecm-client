@@ -2,7 +2,6 @@ import React from 'react';
 import { reduxForm, Field } from 'redux-form';
 import './css/user-login-form.css'
 import { loginUserHandler } from '../actions/users'
-import { browserHistory } from 'react-router';
 
 export class UserLogin extends React.Component {
   onSubmit(values) {
