@@ -1,8 +1,12 @@
 .user-creation-form {
+  display: inline-block;
   width: 150px;
   margin: 0 auto;
   margin-top: 20px;
+  padding-bottom: 10px;
   text-align: center;
+  border-bottom: 1px solid #69768c;
+  border-left: 1px solid #69768c;
 }
 
 .user-creation-form button {

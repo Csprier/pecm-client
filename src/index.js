@@ -8,8 +8,10 @@ import UserLogin from './components/user-login-form';
 
 ReactDOM.render(
   <Provider store={store}>
-    <UserCreation />
-    <UserLogin />
+    <div className="user-creation-login">
+      <UserCreation />
+      <UserLogin />
+    </div>
   </Provider>, 
   document.getElementById('root')
 );

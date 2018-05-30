@@ -1,10 +1,15 @@
-.user-login-form.js {
+.user-login-form {
+  display: inline-block;
   width: 150px;
   margin: 0 auto;
   margin-top: 20px;
+  padding-bottom: 10px;
   text-align: center;
+  border-top: 1px solid #69768c;
+  border-left: 1px solid #69768c;
+  border-right: 1px solid #69768c;
 }
 
-.user-login-form.js {
+.user-login-form button {
   margin-top: 5px;
 }
