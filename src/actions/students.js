@@ -20,21 +20,21 @@ export const listAllStudents = () => dispatch => {
 }
 
 export const PERIOD_ASSIGNMENT = 'PERIOD_ASSIGNMENT';
-export const periodAssignment = (student, period) => ({
+export const periodAssignment = (id, period) => ({
   type: PERIOD_ASSIGNMENT,
-  student,
+  id,
   period
 });
 
-export const assignPeriodToStudent = () => dispatch => {
-  return fetch(`${API_BASE_URL}/api/:id/periods`, {
+export const assignPeriodToStudent = (id, period) => dispatch => {
+  return fetch(`${API_BASE_URL}/api/students/${id}/periods`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify()
+    body: JSON.stringify({ period })
   })
   .then(res => res.json())
-  .then(json => dispatch(periodAssignment(json)))
+  .then(() => dispatch(periodAssignment(id, period)))
   .catch(err => console.error(err));
 }

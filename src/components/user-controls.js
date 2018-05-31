@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import { listAllStudents } from '../actions/students';
 import StudentList from './student-list';
 
