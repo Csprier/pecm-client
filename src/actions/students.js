@@ -19,11 +19,11 @@ export const listAllStudents = () => dispatch => {
   .catch(err => console.error(err));
 }
 
+// period_assignment_success
 export const PERIOD_ASSIGNMENT = 'PERIOD_ASSIGNMENT';
-export const periodAssignment = (id, period) => ({
+export const periodAssignment = (data) => ({
   type: PERIOD_ASSIGNMENT,
-  id,
-  period
+  data
 });
 
 export const assignPeriodToStudent = (id, period) => dispatch => {
@@ -35,6 +35,11 @@ export const assignPeriodToStudent = (id, period) => dispatch => {
     body: JSON.stringify({ period })
   })
   .then(res => res.json())
-  .then(() => dispatch(periodAssignment(id, period)))
+  .then(result => {
+    console.log('Fetch result:', result);
+    dispatch(periodAssignment(result))
+  })
   .catch(err => console.error(err));
 }
+
+

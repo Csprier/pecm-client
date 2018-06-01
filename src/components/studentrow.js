@@ -48,19 +48,17 @@ class StudentRow extends React.Component {
   ]
 
   onChange(e) {
-    console.log('Period selected');
-    console.log(e.target.value);
+    console.log('Period selected from in StudentRow');
     this.props.dispatch(assignPeriodToStudent(this.props.id, e.target.value))
   }
   
 
-  // console.log(props);
   render() {
     return (
       <li className="student-row">
         {this.props.firstname} {this.props.lastname}<br/> 
         STUDENT ID: {this.props.id}
-        <h5>PERIOD</h5>
+        <h5>Period:</h5>
         <select name="select" onChange={(e) => this.onChange(e)}>
           {this.periods.map(period => {
             return (<option key={period.name} value={period.id}>{period.name}</option>)
@@ -73,6 +71,8 @@ class StudentRow extends React.Component {
 
 export default connect()(StudentRow);
 
+// need to save data from selected option of the 
+// particular student, in the database, in the array
+// of periods in the student object
 
-// dispatch an action that takes a student and an id
-//dropdown goes here, mapstatetoprops to get period in the state
+// 
