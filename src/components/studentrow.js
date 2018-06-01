@@ -50,29 +50,48 @@ class StudentRow extends React.Component {
   onChange(e) {
     console.log('Period selected from in StudentRow');
     this.props.dispatch(assignPeriodToStudent(this.props.id, e.target.value))
+    // console.log('Student\'s ID: ', this.props.id);
+    // console.log('Period\'s ID: ', e.target.value);
   }
-  
 
   render() {
     return (
+        // {studentListItem}
       <li className="student-row">
         {this.props.firstname} {this.props.lastname}<br/> 
         STUDENT ID: {this.props.id}
-        <h5>Period:</h5>
         <select name="select" onChange={(e) => this.onChange(e)}>
           {this.periods.map(period => {
             return (<option key={period.name} value={period.id}>{period.name}</option>)
           })}
         </select>
+        {this.props.periods.map((period, i) => <p key={i}>{period}</p>)}
       </li>
     );
   }
 }
 
-export default connect()(StudentRow);
+const mapStateToProps = state => ({
+  periods: state.student.periods
+})
 
-// need to save data from selected option of the 
-// particular student, in the database, in the array
-// of periods in the student object
+export default connect(mapStateToProps)(StudentRow);
 
-// 
+// When an option is selected, onChange dispatches the Thunk to fetch data
+
+/*
+  const studentListItem = this.props.periods.map((period, i) => {
+      return (
+        <li className="student-row">
+          {this.props.firstname} {this.props.lastname}<br/> 
+          STUDENT ID: {this.props.id}
+          <select name="select" onChange={(e) => this.onChange(e)}>
+            {this.periods.map(period => {
+              return (<option key={period.name} value={period.id}>{period.name}</option>)
+            })}
+          </select>
+          {this.props.periods.map((period, i) => <p key={i}>{period}</p>)}
+        </li>
+        )
+    }); 
+*/
