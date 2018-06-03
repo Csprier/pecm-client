@@ -1,5 +1,4 @@
 import { API_BASE_URL } from '../config';
-import { initialState } from '../reducers/studentReducer';
 
 export const GET_ALL_STUDENTS = 'GET_ALL_STUDENTS';
 export const getAllStudents = (students) => ({
@@ -35,7 +34,7 @@ export const assignPeriodToStudent = (id, period) => dispatch => {
   const payload = {
     periods: [period]
   }
-  console.log(payload);
+  // console.log(payload);
 
   return fetch(`${API_BASE_URL}/api/students/${id}/periods`, {
     method: 'PUT',
@@ -69,7 +68,8 @@ export const getAllPeriods = () => dispatch => {
   .then(res => res.json())
   .then(result => {
     dispatch(getPeriodsSuccess({
-      periods: result.reduce((map, { id, ...values }) => ({ ...map, [id]: { id, ...values }}), {})
+      // const reducer = (accumulator, currentValue) => accumulator + currentValue;
+      periods: result.reduce((map, { id, ...values }) => ({ ...map, [id]: { id, ...values }}), {}) // Make an object out of the array
     }))
   })
   .catch(err => console.error(err));
