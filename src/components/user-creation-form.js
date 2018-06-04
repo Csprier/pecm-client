@@ -6,8 +6,8 @@ import { registerNewUserHandler } from '../actions/users';
 
 export class UserCreation extends React.Component {
   onSubmit(values) {
-    // console.log(values);
     this.props.dispatch(registerNewUserHandler(values.username, values.password, values.fullname))
+    .then(() => this.props.history.push('/UserControls'))
   }
 
   render() {

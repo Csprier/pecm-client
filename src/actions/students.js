@@ -28,26 +28,28 @@ export const periodAssignmentSuccess = (period) => ({
 });
 
 export const assignPeriodToStudent = (id, period) => dispatch => {
+  console.log('ID:', id);
+  console.log('Period:', period);
   const options = {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: { id, period }
+    body: JSON.stringify({ id, period })
   }
   // console.log('OPTIONS: ', options);
 
   return fetch(`${API_BASE_URL}/api/students/${id}/periods`, options)
   .then(res => res.json())
   .then(() => {
-    // console.log('FETCH RESULT:', result);
-    console.log({ period });
-    dispatch(periodAssignmentSuccess({ period })) // result.period
+    console.log('Value to be dispatched in the Thunk: ', period);
+    dispatch(periodAssignmentSuccess(period))
+    return dispatch(listAllStudents());
   })
   .catch(err => console.error(err));
 }
 
-// ---- Action Creator --------------------------------
+// ---- GET LIST OF ALL PERIODS --------------------------------
 export const GET_PERIODS_SUCCESS = 'GET_PERIODS_SUCCESS';
 export const getPeriodsSuccess = ({ periods }) => ({
   type: GET_PERIODS_SUCCESS,

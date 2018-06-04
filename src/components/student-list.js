@@ -26,23 +26,27 @@ class StudentList extends React.Component {
       <ul className="student-list">
        {this.props.students.map((student, i) => 
           <li className="student-row" key={i}>
-            
-            <h2>{student.firstname} {student.lastname}</h2>
-            
-            <h3>STUDENT ID: {student.id}</h3>
-            
-            <select className="period-select" name="select" onChange={(e, id) => this.onChange(e, student.id)}>
-              <option>SELECT PERIOD</option>
-              {this.props.periods.map(period => {
-                return (<option key={period.name} value={period.id}>{period.name}</option>)
-              })}
-            </select>
-
-            {this.removeDuplicates(student.periodNames).map((period, i) => <p key={i}> {period} </p>)}
 
             <div className="image-container">
               <img src={avatar} alt="avatarIcon" className="avatar-img" />
             </div>
+
+            <div className="student-info">
+              <h2>{student.firstname} {student.lastname}</h2>
+              <h3>STUDENT ID: {student.id}</h3>
+            </div>
+
+            <div className="period-select-container">
+              <select className="period-select" name="select" onChange={(e, id) => this.onChange(e, student.id)}>
+                <option>SELECT PERIOD</option>
+                {this.props.periods.map((period, i) => <option key={i} value={period.id}>{period.name}</option>)}
+              </select>
+            </div>
+
+            <div className="list-of-students-periods">
+              {this.removeDuplicates(student.periodNames).map((period, i) => <p key={i}> {period} </p>)}
+            </div>
+
           </li>
         )}
       </ul>

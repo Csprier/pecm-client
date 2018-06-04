@@ -1,5 +1,7 @@
 .student-row {
-  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  width: 75%;
   margin: 0 auto;
   margin-bottom: 25px;
   border: 1px solid rgba(132, 220, 255, 0.253);
@@ -7,20 +9,50 @@
   padding: 0px 0px 0px 0px;
   list-style-type: none;
   font-size: 10px;
-  background-color: #bfd7ff;
+  background-color: rgb(235, 249, 255);
 }
 
 .student-row h2 {
   margin: 0px;
   padding: 10px;
-  border-radius: 5px 5px 0px 0px;
-  border-bottom: 1px solid rgba(9, 55, 73, 0.253);
   background-color: aquamarine;
 }
 
-.period-select {
-  width: 125px;
-  height: 25px;
-  position: relative;
+.student-info {
+  width: 200px;
+  border: 1px solid orange;
 }
 
+.period-select-container {
+  display: flex;
+  width: 125px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+}
+
+.period-select {
+  display: flex;
+  width: 125px;
+  height: 25px;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  width: 125px;
+  height: 125px;
+  margin: 0px;
+  padding: 0px;
+  border: 1px solid red;
+}
+
+.avatar-img {
+  width: 125px;
+  height: 125px;
+}
+
+.list-of-students-periods {
+  width: 200px;
+  border: 1px solid red;
+}

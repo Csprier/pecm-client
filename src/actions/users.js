@@ -22,6 +22,7 @@ export const registerNewUserHandler = (username, password, fullname) => dispatch
   })
     .then(res => res.json())
     .then(json => dispatch(registerNewUser(json)))
+    .then(() => dispatch(loginUserHandler(username, password)))
     .catch(err => console.error(err));
 }
 

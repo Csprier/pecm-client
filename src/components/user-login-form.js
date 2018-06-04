@@ -6,8 +6,7 @@ import { loginUserHandler } from '../actions/users'
 export class UserLogin extends React.Component {
   onSubmit(values) {
     this.props.dispatch(loginUserHandler(values.username, values.password))
-    // After the loginUserHandler action is dispatched, push the /usercontrols route to the history
-    this.props.history.push('/UserControls'); 
+     .then(() => this.props.history.push('/UserControls')) 
   }
 
   render() {
