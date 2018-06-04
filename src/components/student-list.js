@@ -22,9 +22,19 @@ class StudentList extends React.Component {
   }
 
   render() {
+    let studentList = this.props.students;
+    let filteredStudents = studentList.filter(student => student.periods.includes(this.props.filter));
+
+    if (this.props.filter !== null) {
+      // if the filter is not null, replace the student list with the filtered student list
+      console.log(studentList.map(student => student.periods));
+      console.log(this.props.filter);
+      studentList = filteredStudents;
+    }
+
     return (
       <ul className="student-list">
-       {this.props.students.map((student, i) => 
+       {studentList.map((student, i) => 
           <li className="student-row" key={i}>
 
             <div className="image-container">
@@ -48,7 +58,8 @@ class StudentList extends React.Component {
             </div>
 
           </li>
-        )}
+        )
+        }
       </ul>
     );
   }
@@ -59,7 +70,10 @@ const mapStateToProps = state => ({
   students: state.student.students.map(student => Object.assign({}, student, {
     periodNames: student.periods.map(period => (state.student.periods[period] || {}).name)
   })),
-  periods: Object.values(state.student.periods)
+  periods: Object.values(state.student.periods),
+  filter: state.student.filter
 });
 
 export default connect(mapStateToProps)(StudentList);
+
+

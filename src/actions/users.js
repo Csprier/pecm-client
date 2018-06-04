@@ -59,13 +59,13 @@ export const loginUserHandler = (username, password) => dispatch => {
 
 // ---FILTER STUDENTS ---------------------------------------------------------------------------------
 export const FILTER_STUDENT_SUCCESS = 'FILTER_STUDENT_SUCCESS';
-export const filterStudentSuccess = (students) => ({
+export const filterStudentSuccess = (filter) => ({
   type: FILTER_STUDENT_SUCCESS,
-  students
+  filter
 })
 
-export const periodFilter = (valueToFilterBy, filteredArray) => dispatch => {
-  console.log('VTFB: ', valueToFilterBy);
-  console.log(filteredArray);
-  dispatch(filterStudentSuccess(filteredArray));
-}
+// export const periodFilter = (valueToFilterBy, filteredArray) => dispatch => {
+//   console.log('VTFB: ', valueToFilterBy);
+//   console.log(filteredArray);
+//   dispatch(filterStudentSuccess(filteredArray));
+// }
