@@ -25,16 +25,22 @@ class StudentList extends React.Component {
     let studentList = this.props.students;
     let filteredStudents = studentList.filter(student => student.periods.includes(this.props.filter));
 
-    if (this.props.filter !== null) {
-      // if the filter is not null, replace the student list with the filtered student list
-      console.log(studentList.map(student => student.periods));
-      console.log(this.props.filter);
-      studentList = filteredStudents;
+    let listOfStudentsToBeRendered = this.props.students;
+
+    // console.log('studentList: ', studentList);
+    console.log('filteredStudents: ', filteredStudents);
+    console.log(this.props.filter);
+    console.log('listOfStudentsToBeRendered', listOfStudentsToBeRendered);
+
+    if (this.props.filter === undefined || this.props.filter === 'SELECT PERIOD') {
+      listOfStudentsToBeRendered = studentList;
+    } else if (this.props.filter !== null) {
+      listOfStudentsToBeRendered = filteredStudents;
     }
 
     return (
       <ul className="student-list">
-       {studentList.map((student, i) => 
+       {listOfStudentsToBeRendered.map((student, i) => 
           <li className="student-row" key={i}>
 
             <div className="image-container">
@@ -57,9 +63,7 @@ class StudentList extends React.Component {
               {this.removeDuplicates(student.periodNames).map((period, i) => <p key={i}> {period} </p>)}
             </div>
 
-          </li>
-        )
-        }
+          </li>)}
       </ul>
     );
   }

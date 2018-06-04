@@ -13,9 +13,7 @@ class UserControls extends React.Component {
   }
   
   filterStudentsByPeriod(e) {
-    // console.log('Selected Period\'s ID: ', e.target.value);
-    console.log('filterStudentsByPeriod: ', this.props.students.filter(student => student.periods.includes(e.target.value)))
-    // let filteredArray = this.props.students.filter(student => student.periods.includes(e.target.value))
+    // console.log('filterStudentsByPeriod: ', this.props.students.filter(student => student.periods.includes(e.target.value)))
     this.props.dispatch(filterStudentSuccess(e.target.value))
   }
 
@@ -27,11 +25,11 @@ class UserControls extends React.Component {
         <h1>User Controls</h1>
         <div className="period-filter-select-container">
           <h5>Filter Students by Period</h5>
-            <select className="period-filter-select" name="select" onChange={(e) => this.filterStudentsByPeriod(e)}>
-              <option>SELECT PERIOD</option>
-              {this.props.periods.map((period, i) => <option key={i} value={period.id}>{period.name}</option>)}
-            </select>
-          </div>
+          <select className="period-filter-select" name="select" onChange={(e) => this.filterStudentsByPeriod(e)}>
+            <option>SELECT PERIOD</option>
+            {this.props.periods.map((period, i) => <option key={i} value={period.id}>{period.name}</option>)}
+          </select>
+        </div>
 
         <div className="student-list-container">
           <StudentList />
