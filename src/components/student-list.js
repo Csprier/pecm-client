@@ -6,15 +6,11 @@ import './css/studentrow.css';
 import { assignPeriodToStudent } from '../actions/students';
 
 class StudentList extends React.Component {
-  onChange(e) {
-    // const noDulicates = this.props.students.map(student => {
-    //   return this.removeDuplicates(student.periodNames);
-    // })
-    // console.log(noDulicates);
-    // console.log('Array of Student ID\'s: ', this.props.students.map(student => student.id));
-    // console.log('e.target.value: ', e.target.value);
-    this.props.dispatch(assignPeriodToStudent(this.props.students.id, e.target.value))
+  onChange(e, id) {
+    this.props.dispatch(assignPeriodToStudent(id, e.target.value))
   }
+
+  
 
   removeDuplicates(arr) {
     let uniqueArray = [];
@@ -33,13 +29,12 @@ class StudentList extends React.Component {
           <li className="student-row" key={i}>
             {student.firstname} {student.lastname}<br/> 
             STUDENT ID: {student.id}
-            <select name="select" onChange={(e) => this.onChange(e)}>
+            <select name="select" onChange={(e, id) => this.onChange(e, student.id)}>
               <option>SELECT PERIOD</option>
               {this.props.periods.map(period => {
                 return (<option key={period.name} value={period.id}>{period.name}</option>)
               })}
             </select>
-            {/* {student.periodNames.map((period, i) => <p key={i}> {period} </p>)} */}
             {this.removeDuplicates(student.periodNames).map((period, i) => <p key={i}> {period} </p>)}
           </li>
         )}

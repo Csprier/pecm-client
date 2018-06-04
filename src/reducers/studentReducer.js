@@ -1,8 +1,7 @@
-import { GET_ALL_STUDENTS, PERIOD_ASSIGNMENT, GET_PERIODS_SUCCESS } from '../actions/students';
+import { GET_ALL_STUDENTS, PERIOD_ASSIGNMENT_SUCCESS, GET_PERIODS_SUCCESS } from '../actions/students';
 
 export const initialState = {
   students: [],
-  data: [],
   periods: {}
 }
 
@@ -13,7 +12,7 @@ export default (state = initialState, action) => {
     });
   }
 
-  if (action.type === PERIOD_ASSIGNMENT) {
+  if (action.type === PERIOD_ASSIGNMENT_SUCCESS) {
     return Object.assign({}, state, {
       ...state
     })
