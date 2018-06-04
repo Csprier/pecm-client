@@ -28,25 +28,22 @@ export const periodAssignment = (data) => ({
 });
 
 export const assignPeriodToStudent = (id, period) => dispatch => {
-  console.log('PERIOD ', period);
-  console.log('ID ', id);
-  // const payload = initialState.periods.filter(per => per.id === period)[0].id
-  const payload = {
-    periods: [period]
-  }
-  // console.log(payload);
+  console.log('----AssignPeriodToStudent----');
+  console.log('ID: ', id); // undefined ????
+  console.log('Period: ', period); // Period ID is correct
+  console.log('----------------------------');
 
   return fetch(`${API_BASE_URL}/api/students/${id}/periods`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(payload) // { periods: [period] }
+    body: JSON.stringify() // (payload)
   })
   .then(res => res.json())
   .then(result => {
     console.log('FETCH RESULT:', result);
-    dispatch(periodAssignment(result.periods))
+    dispatch(periodAssignment(result)) // result.period
   })
   .catch(err => console.error(err));
 }
@@ -68,7 +65,8 @@ export const getAllPeriods = () => dispatch => {
   .then(res => res.json())
   .then(result => {
     dispatch(getPeriodsSuccess({
-      // const reducer = (accumulator, currentValue) => accumulator + currentValue;
+      // reducedArray = (accumulator, currentValue) => accumulator + currentValue;
+      // Object of objects
       periods: result.reduce((map, { id, ...values }) => ({ ...map, [id]: { id, ...values }}), {}) // Make an object out of the array
     }))
   })

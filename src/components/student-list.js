@@ -6,30 +6,28 @@ import './css/studentrow.css';
 import { assignPeriodToStudent } from '../actions/students';
 
 class StudentList extends React.Component {
-  makePeriodArrayObject(periods, periodNames) {
-    const periodObject = {};
-    // Go through the array, forEach value in it, Assign it to a key in an object I've created
-    periods.forEach((period) => periodObject[period] = true);
-    return periodObject;
-  }
-
   onChange(e) {
-    // let studentPeriodNames = this.props.students.map(student => student.periodNames);
-    // const periodList = this.props.periods.map(period => period.name);
-    // console.log(studentPeriodNames);
-    // console.log(periodList)
+    // const noDulicates = this.props.students.map(student => {
+    //   return this.removeDuplicates(student.periodNames);
+    // })
+    // console.log(noDulicates);
+    // console.log('Array of Student ID\'s: ', this.props.students.map(student => student.id));
+    // console.log('e.target.value: ', e.target.value);
     this.props.dispatch(assignPeriodToStudent(this.props.students.id, e.target.value))
   }
 
-  render() {
-    // let studentPeriodNames = this.props.students.map(student => student.periodNames);
-    // const periodList = this.props.periods.map(period => period.name);
+  removeDuplicates(arr) {
+    let uniqueArray = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (uniqueArray.indexOf(arr[i]) === -1 && arr[i] !== undefined) {
+        uniqueArray.push(arr[i])
+      }
+    }
+    return uniqueArray;
+  }
 
-    // console.log(studentPeriodNames);
-    // console.log(periodList)
-    console.log('s', this.props.students)
-    // console.log('p', this.props.periods);
-      return (
+  render() {
+    return (
       <ul className="student-list">
        {this.props.students.map((student, i) => 
           <li className="student-row" key={i}>
@@ -41,7 +39,8 @@ class StudentList extends React.Component {
                 return (<option key={period.name} value={period.id}>{period.name}</option>)
               })}
             </select>
-            {student.periodNames.map((period, i) => <p key={i}> {period} </p>)}
+            {/* {student.periodNames.map((period, i) => <p key={i}> {period} </p>)} */}
+            {this.removeDuplicates(student.periodNames).map((period, i) => <p key={i}> {period} </p>)}
           </li>
         )}
       </ul>
@@ -59,3 +58,8 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps)(StudentList);
 
+// let studentPeriodNames = this.props.students.map(student => {
+//   return ({
+//     studentPeriodNames: this.removeDuplicates(student.periodNames)
+//   });
+// })
