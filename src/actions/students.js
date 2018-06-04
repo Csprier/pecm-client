@@ -22,23 +22,27 @@ export const listAllStudents = () => dispatch => {
 // ===== PERIOD ASSIGNMENT ACTIONS AND THUNK ==========================================
 // period_assignment_success
 export const PERIOD_ASSIGNMENT_SUCCESS = 'PERIOD_ASSIGNMENT_SUCCESS';
-export const periodAssignmentSuccess = (data) => ({
+export const periodAssignmentSuccess = (period) => ({
   type: PERIOD_ASSIGNMENT_SUCCESS,
-  data
+  period
 });
 
 export const assignPeriodToStudent = (id, period) => dispatch => {
-  return fetch(`${API_BASE_URL}/api/students/${id}/periods`, {
+  const options = {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({period}) // (payload)
-  })
+    body: { id, period }
+  }
+  // console.log('OPTIONS: ', options);
+
+  return fetch(`${API_BASE_URL}/api/students/${id}/periods`, options)
   .then(res => res.json())
-  .then((result) => {
-    console.log('FETCH RESULT:', result.periods);
-    dispatch(periodAssignmentSuccess(result.periods)) // result.period
+  .then(() => {
+    // console.log('FETCH RESULT:', result);
+    console.log({ period });
+    dispatch(periodAssignmentSuccess({ period })) // result.period
   })
   .catch(err => console.error(err));
 }

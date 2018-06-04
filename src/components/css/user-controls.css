@@ -1,0 +1,11 @@
+.app_container {
+  width: 100%;
+}
+
+.app-container h1 {
+  margin: 0;
+  background-color: #0061ff;
+  padding: 20px;
+  width: 100%;
+  color: #93bcff;
+}

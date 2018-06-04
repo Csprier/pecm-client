@@ -13,8 +13,11 @@ export default (state = initialState, action) => {
   }
 
   if (action.type === PERIOD_ASSIGNMENT_SUCCESS) {
+    // console.log(action);
+    // console.log(state);
     return Object.assign({}, state, {
-      ...state
+      ...state,
+      periods: [ ...state.periods, action.period ]
     })
   }
 
@@ -26,7 +29,7 @@ export default (state = initialState, action) => {
   return state;
 }
 
-// Whens oeone selects periods to assign to student, 
+// Whens someone selects periods to assign to student, 
 // create a thunk that will do a fetch to the server(to the update endpoint)
 // if successful, then call other thunk from that thunk, and give it the dispatch that it needs
 // listAllStudents()(dispatch) <-- available in a thunk

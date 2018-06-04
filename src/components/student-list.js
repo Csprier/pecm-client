@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './css/student-list.css';
 import './css/studentrow.css';
+import avatar from './css/avatar.png'
 
 import { assignPeriodToStudent } from '../actions/students';
 
@@ -9,8 +10,6 @@ class StudentList extends React.Component {
   onChange(e, id) {
     this.props.dispatch(assignPeriodToStudent(id, e.target.value))
   }
-
-  
 
   removeDuplicates(arr) {
     let uniqueArray = [];
@@ -27,15 +26,23 @@ class StudentList extends React.Component {
       <ul className="student-list">
        {this.props.students.map((student, i) => 
           <li className="student-row" key={i}>
-            {student.firstname} {student.lastname}<br/> 
-            STUDENT ID: {student.id}
-            <select name="select" onChange={(e, id) => this.onChange(e, student.id)}>
+            
+            <h2>{student.firstname} {student.lastname}</h2>
+            
+            <h3>STUDENT ID: {student.id}</h3>
+            
+            <select className="period-select" name="select" onChange={(e, id) => this.onChange(e, student.id)}>
               <option>SELECT PERIOD</option>
               {this.props.periods.map(period => {
                 return (<option key={period.name} value={period.id}>{period.name}</option>)
               })}
             </select>
+
             {this.removeDuplicates(student.periodNames).map((period, i) => <p key={i}> {period} </p>)}
+
+            <div className="image-container">
+              <img src={avatar} alt="avatarIcon" className="avatar-img" />
+            </div>
           </li>
         )}
       </ul>
@@ -52,9 +59,3 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(StudentList);
-
-// let studentPeriodNames = this.props.students.map(student => {
-//   return ({
-//     studentPeriodNames: this.removeDuplicates(student.periodNames)
-//   });
-// })

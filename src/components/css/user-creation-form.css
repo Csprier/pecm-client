@@ -12,3 +12,8 @@
 .user-creation-form button {
   margin-top: 5px;
 }
+
+.user-creation-login {
+  margin: 0px;
+  width: 100%;
+}

@@ -1,8 +1,26 @@
 .student-row {
-  width: 100%;
+  width: 50%;
   margin: 0 auto;
-  border: 1px solid black;
-  padding: 8px 16px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(132, 220, 255, 0.253);
+  border-radius: 5px;
+  padding: 0px 0px 0px 0px;
   list-style-type: none;
   font-size: 10px;
+  background-color: #bfd7ff;
 }
+
+.student-row h2 {
+  margin: 0px;
+  padding: 10px;
+  border-radius: 5px 5px 0px 0px;
+  border-bottom: 1px solid rgba(9, 55, 73, 0.253);
+  background-color: aquamarine;
+}
+
+.period-select {
+  width: 125px;
+  height: 25px;
+  position: relative;
+}
+
