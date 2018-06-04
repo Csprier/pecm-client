@@ -11,6 +11,7 @@ export default (state=initialState, action) => {
       username: action.username
     });
   }
+  
   if (action.type === LOGIN_USER_SUCCESS) {
     console.log(action);
     return Object.assign({}, state, {

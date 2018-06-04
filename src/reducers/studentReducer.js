@@ -1,5 +1,5 @@
 import { GET_ALL_STUDENTS, PERIOD_ASSIGNMENT_SUCCESS, GET_PERIODS_SUCCESS } from '../actions/students';
-
+import { FILTER_STUDENT_SUCCESS } from '../actions/users';
 export const initialState = {
   students: [],
   periods: {}
@@ -25,6 +25,10 @@ export default (state = initialState, action) => {
     return Object.assign({}, state, {
       periods: action.periods
     });
+  }
+
+  if (action.type === FILTER_STUDENT_SUCCESS) {
+    students: action.students
   }
   return state;
 }

@@ -9,3 +9,14 @@
   width: 100%;
   color: #93bcff;
 }
+
+.period-filter-select-container {
+  width: 200px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+.period-filter-select {
+  width: 125px;
+  height: 25px;
+}

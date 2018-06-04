@@ -1,5 +1,6 @@
 import { API_BASE_URL } from '../config';
 
+// ---CREATE ---------------------------------------------------------------------------------
 export const REGISTER_NEW_USER = 'REGISTER_NEW_USER';
 export const registerNewUser = (id, username, fullname) => ({
 	type: REGISTER_NEW_USER,
@@ -54,4 +55,17 @@ export const loginUserHandler = (username, password) => dispatch => {
   .then(res => res.json())
   .then(({ authToken }) => dispatch(loginUserSuccess(username, authToken)))
   .catch(err => console.error(err));
+}
+
+// ---FILTER STUDENTS ---------------------------------------------------------------------------------
+export const FILTER_STUDENT_SUCCESS = 'FILTER_STUDENT_SUCCESS';
+export const filterStudentSuccess = (students) => ({
+  type: FILTER_STUDENT_SUCCESS,
+  students
+})
+
+export const periodFilter = (valueToFilterBy, filteredArray) => dispatch => {
+  console.log('VTFB: ', valueToFilterBy);
+  console.log(filteredArray);
+  dispatch(filterStudentSuccess(filteredArray));
 }
