@@ -1,23 +1,52 @@
-.user-creation-form {
-  display: inline-block;
-  width: 150px;
-  margin: 0 auto;
-  margin-top: 20px;
-  padding-bottom: 10px;
-  text-align: center;
-  border-bottom: 1px solid #69768c;
-  border-left: 1px solid #69768c;
+@media screen and (min-width: 300px) {
+  .user-creation-form {
+    display: inline-block;
+    width: 150px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    border-bottom: 1px solid #69768c;
+    border-left: 1px solid #69768c;
+  }
+
+  .user-creation-form input {
+    width: 100px;
+  }
+
+  .user-creation-form button {
+    margin-top: 5px;
+  }
+
+  .user-creation-login {
+    margin: 0px;
+    width: 100%;
+  }
 }
 
-.user-creation-form input {
-  width: 125px;
-}
+/* DESKTOP DIMENSIONS */
+@media screen and (min-width: 1224px) {
+  .user-creation-form {
+    display: inline-block;
+    width: 150px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    border-bottom: 1px solid #69768c;
+    border-left: 1px solid #69768c;
+  }
 
-.user-creation-form button {
-  margin-top: 5px;
-}
+  .user-creation-form input {
+    width: 125px;
+  }
 
-.user-creation-login {
-  margin: 0px;
-  width: 100%;
+  .user-creation-form button {
+    margin-top: 5px;
+  }
+
+  .user-creation-login {
+    margin: 0px;
+    width: 100%;
+  }
 }
