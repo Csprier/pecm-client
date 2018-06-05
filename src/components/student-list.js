@@ -44,14 +44,14 @@ class StudentList extends React.Component {
           <li className="student-row" key={i}>
 
             <div className="image-container">
+              <div className="student-info">
+                <h2>{student.firstname} {student.lastname}</h2>
+                <h3>STUDENT ID: {student.id}</h3>
+              </div>
               <img src={avatar} alt="avatarIcon" className="avatar-img" />
             </div>
 
-            <div className="student-info">
-              <h2>{student.firstname} {student.lastname}</h2>
-              <h3>STUDENT ID: {student.id}</h3>
-            </div>
-
+          <div className="right-box">
             <div className="period-select-container">
               <select className="period-select" name="select" onChange={(e, id) => this.onChange(e, student.id)}>
                 <option>SELECT PERIOD</option>
@@ -60,8 +60,9 @@ class StudentList extends React.Component {
             </div>
 
             <div className="list-of-students-periods">
-              {this.removeDuplicates(student.periodNames).map((period, i) => <p key={i}> {period} </p>)}
+                {this.removeDuplicates(student.periodNames).map((period, i) => <p key={i}> {period} </p>)}
             </div>
+          </div>
 
           </li>)}
       </ul>

@@ -8,6 +8,7 @@
   padding: 20px;
   width: 100%;
   color: #93bcff;
+  border: 1px solid red;
 }
 
 .period-filter-select-container {
@@ -19,4 +20,14 @@
 .period-filter-select {
   width: 125px;
   height: 25px;
+}
+
+/* MOBILE DIMENSIONS */
+@media only screen and (max-width: 320px) {
+  .app_container {
+    width: 100%;
+  }
+
+  
+
 }
