@@ -24,7 +24,7 @@ class UserControls extends React.Component {
       <main role="main">
         <div className="app-container">
           <header role="banner">
-            <h1>User Controls</h1>
+            <h1>|| Teacher's Controls ||</h1>
           </header>
 
           <div className="period-filter-select-container">
