@@ -3,13 +3,13 @@
   .student-list-container {
     display: flex;
     width: 100%;
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
   }
   
   .student-list {
     width: 100%;
     padding: 0px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
 }
 

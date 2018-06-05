@@ -40,7 +40,7 @@ export class UserCreation extends React.Component {
             component="input" 
             validate={[required, nonEmpty]}
           />
-          <button type="submit">CREATE ACCOUNT</button>
+          <button name="submit-create-account" type="submit">CREATE ACCOUNT</button>
         </form>
       </div>
     );

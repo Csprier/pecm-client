@@ -28,8 +28,8 @@ export const periodAssignmentSuccess = (period) => ({
 });
 
 export const assignPeriodToStudent = (id, period) => dispatch => {
-  console.log('ID:', id);
-  console.log('Period:', period);
+  // console.log('ID:', id);
+  // console.log('Period:', period);
   const options = {
     method: 'PUT',
     headers: {
@@ -42,7 +42,7 @@ export const assignPeriodToStudent = (id, period) => dispatch => {
   return fetch(`${API_BASE_URL}/api/students/${id}/periods`, options)
   .then(res => res.json())
   .then(() => {
-    console.log('Value to be dispatched in the Thunk: ', period);
+    // console.log('Value to be dispatched in the Thunk: ', period);
     dispatch(periodAssignmentSuccess(period))
     return dispatch(listAllStudents());
   })

@@ -21,21 +21,26 @@ class UserControls extends React.Component {
 
   render(){
     return (
-      <div className="app-container">
-        <h1>User Controls</h1>
-        <div className="period-filter-select-container">
-          <h5>Filter Students by Period</h5>
-          <select className="period-filter-select" name="select" onChange={(e) => this.filterStudentsByPeriod(e)}>
-            <option>SELECT PERIOD</option>
-            {this.props.periods.map((period, i) => <option key={i} value={period.id}>{period.name}</option>)}
-          </select>
-        </div>
+      <main role="main">
+        <div className="app-container">
+          <header role="banner">
+            <h1>User Controls</h1>
+          </header>
 
-        <div className="student-list-container">
-          <StudentList />
+          <div className="period-filter-select-container">
+            <h5>Filter Students by Period</h5>
+            <select htmlFor="periodfilterselect"className="period-filter-select" name="select" onChange={(e) => this.filterStudentsByPeriod(e)}>
+              <option>SELECT PERIOD</option>
+              {this.props.periods.map((period, i) => <option key={i} value={period.id}>{period.name}</option>)}
+            </select>
+          </div>
+
+          <div className="student-list-container">
+            <StudentList />
+          </div>
+          
         </div>
-        
-      </div>
+      </main>
     );
   }
 }

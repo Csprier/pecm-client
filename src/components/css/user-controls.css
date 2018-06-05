@@ -8,13 +8,13 @@
   padding: 20px;
   width: 100%;
   color: #93bcff;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .period-filter-select-container {
   width: 200px;
   margin: 0 auto;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .period-filter-select {

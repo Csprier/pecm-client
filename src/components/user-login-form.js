@@ -2,6 +2,8 @@ import React from 'react';
 import { reduxForm, Field } from 'redux-form';
 import './css/user-login-form.css'
 import { loginUserHandler } from '../actions/users'
+import { required, nonEmpty } from '../validators'
+
 
 export class UserLogin extends React.Component {
   onSubmit(values) {
@@ -18,10 +20,11 @@ export class UserLogin extends React.Component {
         )}>
           <label htmlFor="username">Username</label>
           <Field 
-            name="username" 
+            name="username"
             id="username" 
             type="text" 
             component="input"
+            validate={[required, nonEmpty]}
             />
           <label htmlFor="password">Password</label>
           <Field 
@@ -29,8 +32,9 @@ export class UserLogin extends React.Component {
             id="password" 
             type="text" 
             component="input" 
+            validate={[required, nonEmpty]}
           />
-          <button type="submit">LOG IN</button>
+          <button name="submit-login" type="submit">LOG IN</button>
         </form>
       </div>
     );

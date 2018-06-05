@@ -28,9 +28,9 @@ class StudentList extends React.Component {
     let listOfStudentsToBeRendered = this.props.students;
 
     // console.log('studentList: ', studentList);
-    console.log('filteredStudents: ', filteredStudents);
-    console.log(this.props.filter);
-    console.log('listOfStudentsToBeRendered', listOfStudentsToBeRendered);
+    // console.log('filteredStudents: ', filteredStudents);
+    // console.log(this.props.filter);
+    // console.log('listOfStudentsToBeRendered', listOfStudentsToBeRendered);
 
     if (this.props.filter === undefined || this.props.filter === 'SELECT PERIOD') {
       listOfStudentsToBeRendered = studentList;
@@ -48,12 +48,12 @@ class StudentList extends React.Component {
                 <h2>{student.firstname} {student.lastname}</h2>
                 <h3>STUDENT ID: {student.id}</h3>
               </div>
-              <img src={avatar} alt="avatarIcon" className="avatar-img" />
+              <img role="presentation" src={avatar} alt="avatarIcon" className="avatar-img" />
             </div>
 
           <div className="right-box">
             <div className="period-select-container">
-              <select className="period-select" name="select" onChange={(e, id) => this.onChange(e, student.id)}>
+              <select htmlFor="periodselect" className="period-select" name="select" onChange={(e, id) => this.onChange(e, student.id)}>
                 <option>SELECT PERIOD</option>
                 {this.props.periods.map((period, i) => <option key={i} value={period.id}>{period.name}</option>)}
               </select>
