@@ -10,6 +10,10 @@
   border-right: 1px solid #69768c;
 }
 
+.user-login-form input {
+  width: 100%;
+}
+
 .user-login-form button {
   margin-top: 5px;
 }

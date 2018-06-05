@@ -9,6 +9,10 @@
   border-left: 1px solid #69768c;
 }
 
+.user-creation-form input {
+  width: 100%;
+}
+
 .user-creation-form button {
   margin-top: 5px;
 }

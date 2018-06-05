@@ -8,6 +8,8 @@
 
 # production
 /build
+.netlify
+prod-deploy.sh
 
 # misc
 .DS_Store
