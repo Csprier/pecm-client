@@ -21,26 +21,24 @@ class UserControls extends React.Component {
 
   render(){
     return (
-      <main role="main">
-        <div className="app-container">
-          <header role="banner">
-            <h1>|| Teacher's Controls ||</h1>
-          </header>
+      <div className="app-container" role="region" aria-labelledby="region1">
+        <header role="banner">
+          <h1>|| Teacher's Controls ||</h1>
+        </header>
 
-          <div className="period-filter-select-container">
-            <h5>Filter Students by Period</h5>
-            <select htmlFor="periodfilterselect"className="period-filter-select" name="select" onChange={(e) => this.filterStudentsByPeriod(e)}>
-              <option>SELECT PERIOD</option>
-              {this.props.periods.map((period, i) => <option key={i} value={period.id}>{period.name}</option>)}
-            </select>
-          </div>
-
-          <div className="student-list-container">
-            <StudentList />
-          </div>
-          
+        <div className="period-filter-select-container" role="region" aria-labelledby="region2">
+          <h5>Filter Students by Period</h5>
+          <select htmlFor="periodfilterselect"className="period-filter-select" name="select" onChange={(e) => this.filterStudentsByPeriod(e)}>
+            <option>SELECT PERIOD</option>
+            {this.props.periods.map((period, i) => <option key={i} value={period.id}>{period.name}</option>)}
+          </select>
         </div>
-      </main>
+
+        <div className="student-list-container" role="region" aria-labelledby="region3">
+          <StudentList />
+        </div>
+        
+      </div>
     );
   }
 }

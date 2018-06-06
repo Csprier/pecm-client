@@ -13,9 +13,14 @@ ReactDOM.render(
   <Provider store={store}>
    <Router>
       <div className="user-creation-login">
-        <Route exact path="/" component={UserCreation} /> 
-        <Route exact path="/" component={UserLogin} />
-        <Route path="/UserControls" component={UserControls} />  
+        <header role="banner">
+          <h1> PECM </h1>
+        </header>
+        <main role="main">
+          <Route exact path="/" component={UserCreation} /> 
+          <Route exact path="/" component={UserLogin} />
+          <Route path="/UserControls" component={UserControls} />  
+        </main>
       </div>
     </Router>
   </Provider>, 

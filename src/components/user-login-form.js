@@ -4,7 +4,6 @@ import './css/user-login-form.css'
 import { loginUserHandler } from '../actions/users'
 import { required, nonEmpty } from '../validators'
 
-
 export class UserLogin extends React.Component {
   onSubmit(values) {
     this.props.dispatch(loginUserHandler(values.username, values.password))
@@ -20,16 +19,18 @@ export class UserLogin extends React.Component {
         )}>
           <label htmlFor="username">Username</label>
           <Field 
+            aria-label="username"
             name="username"
-            id="username" 
+            id="loginusername" 
             type="text" 
             component="input"
             validate={[required, nonEmpty]}
             />
           <label htmlFor="password">Password</label>
           <Field 
+            aria-label="password"
             name="password" 
-            id="password" 
+            id="loginpassword" 
             type="text" 
             component="input" 
             validate={[required, nonEmpty]}

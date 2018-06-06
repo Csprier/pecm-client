@@ -13,35 +13,38 @@ export class UserCreation extends React.Component {
   render() {
     return (
       <div className="user-creation-form">
-        <h2>Create an Account</h2>
-        <form onSubmit={this.props.handleSubmit(values =>
-          this.onSubmit(values)
-        )}>
-          <label htmlFor="fullname">Full Name</label>
-          <Field
-            name="fullname" 
-            id="fullname" 
-            type="text" 
-            component="input" 
-          />
-          <label htmlFor="username">Username</label>
-          <Field 
-            name="username" 
-            id="username" 
-            type="text" 
-            component="input"
-            validate={[required, nonEmpty]}
+          <h2>Create an Account</h2>
+          <form onSubmit={this.props.handleSubmit(values =>
+            this.onSubmit(values)
+          )}>
+            <label htmlFor="createfullname">Full Name</label>
+            <Field
+              aria-label="createfullname"
+              name="fullname" 
+              id="fullname" 
+              type="text" 
+              component="input" 
             />
-          <label htmlFor="password">Password</label>
-          <Field 
-            name="password" 
-            id="password" 
-            type="text" 
-            component="input" 
-            validate={[required, nonEmpty]}
-          />
-          <button name="submit-create-account" type="submit">CREATE ACCOUNT</button>
-        </form>
+            <label htmlFor="createusername">Username</label>
+            <Field 
+              aria-label="createusername"
+              name="username" 
+              id="username" 
+              type="text" 
+              component="input"
+              validate={[required, nonEmpty]}
+              />
+            <label htmlFor="createpassword">Password</label>
+            <Field 
+              aria-label="createpassword"
+              name="password" 
+              id="password" 
+              type="text" 
+              component="input" 
+              validate={[required, nonEmpty]}
+            />
+            <button name="submit-create-account" type="submit">CREATE ACCOUNT</button>
+          </form>
       </div>
     );
   }
