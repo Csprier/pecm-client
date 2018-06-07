@@ -1,4 +1,4 @@
-Welcome to PECM! (Physical Education Class Manager)
+<h1>Welcome to PECM! (Physical Education Class Manager)</h1>
 
 This is a tool teachers can use on their mobile devices to help organize daily class scheduling. 
 
