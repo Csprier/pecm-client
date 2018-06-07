@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './css/student-list.css';
 import './css/studentrow.css';
-import avatar from './css/avatar.png'
+import avatar from './css/avatar.png';
 
 import { assignPeriodToStudent } from '../actions/students';
 

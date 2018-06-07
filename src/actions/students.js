@@ -7,20 +7,20 @@ export const getAllStudents = (students) => ({
 });
 
 export const listAllStudents = () => dispatch => {
+
   return fetch(`${API_BASE_URL}/api/students`, {
     method: 'GET',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify()
+    // headers: {
+    //   'Content-Type': 'application/json'
+    // },
+    // body: JSON.stringify()
   })
   .then(res => res.json())
-  .then(json => dispatch(getAllStudents(json))) // pass in json to pass in the data
+  .then(json => dispatch(getAllStudents(json)))
   .catch(err => console.error(err));
 }
 
 // ===== PERIOD ASSIGNMENT ACTIONS AND THUNK ==========================================
-// period_assignment_success
 export const PERIOD_ASSIGNMENT_SUCCESS = 'PERIOD_ASSIGNMENT_SUCCESS';
 export const periodAssignmentSuccess = (period) => ({
   type: PERIOD_ASSIGNMENT_SUCCESS,
@@ -28,8 +28,6 @@ export const periodAssignmentSuccess = (period) => ({
 });
 
 export const assignPeriodToStudent = (id, period) => dispatch => {
-  // console.log('ID:', id);
-  // console.log('Period:', period);
   const options = {
     method: 'PUT',
     headers: {
@@ -37,12 +35,10 @@ export const assignPeriodToStudent = (id, period) => dispatch => {
     },
     body: JSON.stringify({ id, period })
   }
-  // console.log('OPTIONS: ', options);
 
   return fetch(`${API_BASE_URL}/api/students/${id}/periods`, options)
   .then(res => res.json())
   .then(() => {
-    // console.log('Value to be dispatched in the Thunk: ', period);
     dispatch(periodAssignmentSuccess(period))
     return dispatch(listAllStudents());
   })

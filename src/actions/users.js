@@ -1,5 +1,11 @@
 import { API_BASE_URL } from '../config';
 
+// ---ONBOARDING MODAL ---------------------------------------------------------------------------------
+export const TOGGLE_MODAL = 'TOGGLE_MODAL';
+export const toggleModal = () => ({
+  type: TOGGLE_MODAL
+});
+
 // ---CREATE ---------------------------------------------------------------------------------
 export const REGISTER_NEW_USER = 'REGISTER_NEW_USER';
 export const registerNewUser = (id, username, fullname) => ({
@@ -63,9 +69,3 @@ export const filterStudentSuccess = (filter) => ({
   type: FILTER_STUDENT_SUCCESS,
   filter
 })
-
-// export const periodFilter = (valueToFilterBy, filteredArray) => dispatch => {
-//   console.log('VTFB: ', valueToFilterBy);
-//   console.log(filteredArray);
-//   dispatch(filterStudentSuccess(filteredArray));
-// }

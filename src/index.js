@@ -6,6 +6,7 @@ import './index.css';
 import UserCreation from './components/user-creation-form';
 import UserLogin from './components/user-login-form';
 import UserControls from './components/user-controls';
+import Onboarding from './components/onboarding';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
@@ -20,6 +21,7 @@ ReactDOM.render(
           <Route exact path="/" component={UserCreation} /> 
           <Route exact path="/" component={UserLogin} />
           <Route path="/UserControls" component={UserControls} />  
+          <Onboarding />
         </main>
       </div>
     </Router>

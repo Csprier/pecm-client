@@ -13,11 +13,8 @@ class UserControls extends React.Component {
   }
   
   filterStudentsByPeriod(e) {
-    // console.log('filterStudentsByPeriod: ', this.props.students.filter(student => student.periods.includes(e.target.value)))
     this.props.dispatch(filterStudentSuccess(e.target.value))
   }
-
-  
 
   render(){
     return (
@@ -52,7 +49,3 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(UserControls);
-
-// students: state.student.students.map(student => Object.assign({}, student, {
-//   periodNames: student.periods.map(period => (state.student.periods[period] || {}).name)
-// })),

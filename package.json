@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "body-parser": "^1.18.3",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-redux": "^5.0.7",
