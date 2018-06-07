@@ -21,3 +21,6 @@ This client uses:
 - redux
 - redux-form
 - redux-thunk
+
+Deployed version on Netlify!
+http://modest-johnson-d68554.netlify.com/
