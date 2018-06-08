@@ -31,7 +31,7 @@ export class UserLogin extends React.Component {
             aria-label="password"
             name="password" 
             id="loginpassword" 
-            type="text" 
+            type="password" 
             component="input" 
             validate={[required, nonEmpty]}
           />

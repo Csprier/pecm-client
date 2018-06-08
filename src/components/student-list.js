@@ -24,13 +24,7 @@ class StudentList extends React.Component {
   render() {
     let studentList = this.props.students;
     let filteredStudents = studentList.filter(student => student.periods.includes(this.props.filter));
-
     let listOfStudentsToBeRendered = this.props.students;
-
-    // console.log('studentList: ', studentList);
-    // console.log('filteredStudents: ', filteredStudents);
-    // console.log(this.props.filter);
-    // console.log('listOfStudentsToBeRendered', listOfStudentsToBeRendered);
 
     if (this.props.filter === undefined || this.props.filter === 'SELECT PERIOD') {
       listOfStudentsToBeRendered = studentList;
@@ -70,7 +64,6 @@ class StudentList extends React.Component {
   }
 }
 
-// students now has a students.student.periodName array
 const mapStateToProps = state => ({
   students: state.student.students.map(student => Object.assign({}, student, {
     periodNames: student.periods.map(period => (state.student.periods[period] || {}).name)

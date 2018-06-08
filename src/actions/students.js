@@ -1,5 +1,6 @@
 import { API_BASE_URL } from '../config';
 
+// ===== GET/LIST ALL STUDENTS ACTION AND THUNK ==========================================
 export const GET_ALL_STUDENTS = 'GET_ALL_STUDENTS';
 export const getAllStudents = (students) => ({
   type: GET_ALL_STUDENTS,
@@ -7,13 +8,8 @@ export const getAllStudents = (students) => ({
 });
 
 export const listAllStudents = () => dispatch => {
-
   return fetch(`${API_BASE_URL}/api/students`, {
     method: 'GET',
-    // headers: {
-    //   'Content-Type': 'application/json'
-    // },
-    // body: JSON.stringify()
   })
   .then(res => res.json())
   .then(json => dispatch(getAllStudents(json)))
@@ -37,15 +33,15 @@ export const assignPeriodToStudent = (id, period) => dispatch => {
   }
 
   return fetch(`${API_BASE_URL}/api/students/${id}/periods`, options)
-  .then(res => res.json())
-  .then(() => {
-    dispatch(periodAssignmentSuccess(period))
-    return dispatch(listAllStudents());
-  })
+    .then(res => res.json())
+    .then(() => {
+      dispatch(periodAssignmentSuccess(period))
+      return dispatch(listAllStudents());
+    })
   .catch(err => console.error(err));
 }
 
-// ---- GET LIST OF ALL PERIODS --------------------------------
+// ==== GET LIST OF ALL PERIODS ==========================================
 export const GET_PERIODS_SUCCESS = 'GET_PERIODS_SUCCESS';
 export const getPeriodsSuccess = ({ periods }) => ({
   type: GET_PERIODS_SUCCESS,
@@ -62,8 +58,6 @@ export const getAllPeriods = () => dispatch => {
   .then(res => res.json())
   .then(result => {
     dispatch(getPeriodsSuccess({
-      // reducedArray = (accumulator, currentValue) => accumulator + currentValue;
-      // Object of objects
       periods: result.reduce((map, { id, ...values }) => ({ ...map, [id]: { id, ...values }}), {}) // Make an object out of the array
     }))
   })
