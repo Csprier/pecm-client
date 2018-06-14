@@ -14,10 +14,10 @@ class AddStudentModal extends React.Component {
       <div className="modal">
         <button className="close-modal-btn" name="close-modal-button" type="button" onClick={() => this.onClick()}>X</button>
         <form onSubmit={this.props.handleSubmit(values => {
-            console.log(values);
             this.props.dispatch(createStudent(values.firstname, values.lastname))
             .then(() => this.props.dispatch(listAllStudents()))
             .then(() => this.props.dispatch(getAllPeriods()))
+            .then(() => this.props.dispatch(toggleCreateStudentModal()))
           })}>
           <table>
             <tbody>

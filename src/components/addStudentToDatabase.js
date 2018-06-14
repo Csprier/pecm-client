@@ -6,12 +6,10 @@ import AddStudentModal from './addStudentModal';
 
 class AddStudentToDatabase extends React.Component {
   onClick() {
-    console.log(this.props);
     this.props.dispatch(toggleCreateStudentModal());
   }
 
   render() {
-    console.log(this.props.modalView);
     return (
       <div className="add-student-form-container">
         <h5>Add Student To Database</h5>
