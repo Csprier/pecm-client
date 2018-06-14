@@ -10,6 +10,12 @@
     padding: 0px;
   }
 
+  .student-row button {
+    width: 25px;
+    height: 25px;
+    margin-top: 10px;
+  }
+
   .student-info h3 {
     color: black;
   }

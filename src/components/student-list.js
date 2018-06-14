@@ -4,11 +4,17 @@ import './css/student-list.css';
 import './css/studentrow.css';
 import avatar from './css/avatar.png';
 
-import { assignPeriodToStudent } from '../actions/students';
+import { assignPeriodToStudent, deleteStudent } from '../actions/students';
 
 class StudentList extends React.Component {
   onChange(e, id) {
     this.props.dispatch(assignPeriodToStudent(id, e.target.value))
+  }
+
+  onClick(e) {
+    const studentIdToBeDeleted = this.props.studentIds.find(student => student.id === this.studentIds);
+    // this.props.studentIds.find(student => student.id === this.studentIds))
+    this.props.dispatch(deleteStudent(studentIdToBeDeleted.student));
   }
 
   removeDuplicates(arr) {
@@ -57,7 +63,7 @@ class StudentList extends React.Component {
                 {this.removeDuplicates(student.periodNames).map((period, i) => <p key={i}> {period} </p>)}
             </div>
           </div>
-
+          <button onClick={(e) => this.onClick(e)}>X</button>
           </li>)}
       </ul>
     );
@@ -69,7 +75,10 @@ const mapStateToProps = state => ({
     periodNames: student.periods.map(period => (state.student.periods[period] || {}).name)
   })),
   periods: Object.values(state.student.periods),
-  filter: state.student.filter
+  filter: state.student.filter,
+  studentIds: state.student.students.map(student => {
+    return { student: student.id }
+  })
 });
 
 export default connect(mapStateToProps)(StudentList);

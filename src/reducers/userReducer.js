@@ -1,8 +1,6 @@
 import { TOGGLE_MODAL, REGISTER_NEW_USER, LOGIN_USER_SUCCESS } from '../actions/users';
 
-const initialState = {
-  modalView: false
-};
+const initialState = {};
 
 export default (state=initialState, action) => {
   if(action.type === TOGGLE_MODAL){
