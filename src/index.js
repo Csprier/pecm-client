@@ -15,7 +15,7 @@ ReactDOM.render(
    <Router>
       <div className="user-creation-login">
         <header role="banner">
-          <h1> PECM </h1>
+          <h1> P.E. Class Manager </h1>
         </header>
         <main role="main">
           <Route exact path="/" component={UserCreation} /> 

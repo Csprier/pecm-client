@@ -14,3 +14,21 @@ body {
   margin-top: 20px;
   text-align: center;
 }
+
+.user-creation-login h1 {
+  font-size: 45px;
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: sans-serif;
+    background: url('https://images.unsplash.com/photo-1420547625303-0894752c1ffa?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1e4c4e7c47d5e3c4db4d12d92f06030b&auto=format&fit=crop&w=1653&q=80') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
