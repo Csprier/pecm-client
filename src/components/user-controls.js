@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { listAllStudents, getAllPeriods } from '../actions/students';
 import Filter from './filter';
 import StudentList from './student-list';
+import AddStudentToDatabase from './addStudentToDatabase';
 import './css/student-list.css';
 import './css/user-controls.css';
 
@@ -18,7 +19,10 @@ class UserControls extends React.Component {
         <header role="banner">
           <h1>|| Teacher's Controls ||</h1>
         </header>
-        <Filter />
+        <div className="teacher-controls">
+          <AddStudentToDatabase />
+          <Filter />
+        </div>
         <div className="student-list-container" role="region" aria-labelledby="region3">
           <StudentList />
         </div>
