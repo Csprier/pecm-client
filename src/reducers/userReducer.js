@@ -13,7 +13,6 @@ export default (state=initialState, action) => {
   }
 
   if(action.type === REGISTER_NEW_USER) {
-    console.log(action)
     return Object.assign({}, state, {
       ...state,
       fullname: action.fullname,
@@ -22,7 +21,6 @@ export default (state=initialState, action) => {
   }
   
   if (action.type === LOGIN_USER_SUCCESS) {
-    console.log(action);
     return Object.assign({}, state, {
       ...state,
       username: action.username,
