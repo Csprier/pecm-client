@@ -20,8 +20,8 @@ ReactDOM.render(
         <main role="main">
           <Route exact path="/" component={UserCreation} /> 
           <Route exact path="/" component={UserLogin} />
-          <Route path="/UserControls" component={UserControls} />  
-          <Onboarding />
+          <Route exact path="/" component={Onboarding} />
+          <Route path="/UserControls" component={UserControls} />            
         </main>
       </div>
     </Router>

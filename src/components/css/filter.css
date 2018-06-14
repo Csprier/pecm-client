@@ -1,0 +1,15 @@
+.period-filter-select-container {
+  width: 200px;
+  margin: 0 auto;
+  /* border: 1px solid red; */
+}
+
+.period-filter-select {
+  width: 200px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  padding: 2px 0px 2px 0px;
+  font-size: 10px;
+  border: 1px solid black;
+}
