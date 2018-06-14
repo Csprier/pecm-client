@@ -79,7 +79,7 @@
   .student-row {
     display: flex;
     justify-content: space-around;
-    width: 75%;
+    width: 45%;
     margin: 0 auto;
     margin-bottom: 25px;
     border-top: 1px solid black;

@@ -16,8 +16,6 @@ export const registerNewUser = (id, username, fullname) => ({
 });
 
 export const registerNewUserHandler = (username, password, fullname) => dispatch => {
-  console.log({ fullname, username, password });
-  
   const newUser = { fullname, username, password };
 
   return fetch(`${API_BASE_URL}/api/users`, {
