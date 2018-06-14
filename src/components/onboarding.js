@@ -6,7 +6,8 @@ export class Onboarding extends React.Component {
   render() {
     return (
       <div className="onboarding-content">
-        <h2>Welcome to PECM! (Physical Education Class Manager)</h2>
+        <h2>Welcome to PECM!</h2>
+        <h2>(Physical Education Class Manager)</h2>
 
         <p>This is a tool teachers can use on their mobile devices to help organize daily class scheduling. </p>
 
