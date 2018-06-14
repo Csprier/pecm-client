@@ -1,0 +1,12 @@
+.modal {
+  width: 100%;
+  border: 1px solid white;
+}
+
+.close-modal-button {
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+
+}

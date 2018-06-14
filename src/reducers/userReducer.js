@@ -1,9 +1,11 @@
-import { TOGGLE_MODAL, REGISTER_NEW_USER, LOGIN_USER_SUCCESS } from '../actions/users';
+import { TOGGLE_CREATE_STUDENT_MODAL, REGISTER_NEW_USER, LOGIN_USER_SUCCESS, CREATE_STUDENT_SUCCESS } from '../actions/users';
 
-const initialState = {};
+const initialState = {
+  modalView: false
+};
 
 export default (state=initialState, action) => {
-  if(action.type === TOGGLE_MODAL){
+  if(action.type === TOGGLE_CREATE_STUDENT_MODAL){
     return {
       ...state,
       modalView: !state.modalView,
@@ -24,6 +26,14 @@ export default (state=initialState, action) => {
       username: action.username,
       token: action.token
     });
+  }
+
+  if (action.type === CREATE_STUDENT_SUCCESS) {
+    return {
+      ...state,
+      firstname: action.firstname,
+      lastname: action.lastname  
+    }
   }
   return state;
 }
