@@ -6,11 +6,19 @@ Create an account! Upon creation, you will be automatically logged in.
 
 If you already have an account, simply log in!
 
-<img width="443" alt="screen shot 2018-06-07 at 4 09 15 pm" src="https://user-images.githubusercontent.com/26131912/41123335-28d3e940-6a53-11e8-8d64-7a1b60315e07.png">
+<img width="673" alt="screen shot 2018-06-15 at 3 55 09 pm" src="https://user-images.githubusercontent.com/26131912/41486723-86d6dd5c-709a-11e8-8ef6-1910db7d483e.png">
 
-You will be presented with a database full of students. From there, you have the option to filter by period via the dropdown select menu to see the students in a specified period, or to assign a period to a specific student via the student's individual dropdown select menu to add them to a period.
+You will be presented with a database full of students. From there, you will have the option to:
+- Add a student
+<img width="199" alt="screen shot 2018-06-15 at 3 57 09 pm" src="https://user-images.githubusercontent.com/26131912/41486792-c582abd0-709a-11e8-8d54-1d18e8816a21.png">
 
-<img width="577" alt="screen shot 2018-06-07 at 4 14 50 pm" src="https://user-images.githubusercontent.com/26131912/41123569-f17edaf8-6a53-11e8-954c-6423000e802e.png">
+- Delete a student
+- Add a period to the student, for scheduling.
+- Delete periods from the student
+<img width="454" alt="screen shot 2018-06-15 at 3 57 24 pm" src="https://user-images.githubusercontent.com/26131912/41486824-ec24002c-709a-11e8-914f-bcd7f9601ee8.png">
+
+- Filter the list of students to see which students belong in what period
+<img width="199" alt="screen shot 2018-06-15 at 3 57 09 pm" src="https://user-images.githubusercontent.com/26131912/41486803-cf6cc220-709a-11e8-92a1-1df42b0b9404.png">
 
 This client uses:
 - react
@@ -23,4 +31,4 @@ This client uses:
 - redux-thunk
 
 Deployed version on Netlify!
-http://modest-johnson-d68554.netlify.com/
+http://pecm.netlify.com/
