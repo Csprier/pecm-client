@@ -18,7 +18,7 @@ You will be presented with a database full of students. From there, you will hav
 <img width="454" alt="screen shot 2018-06-15 at 3 57 24 pm" src="https://user-images.githubusercontent.com/26131912/41486824-ec24002c-709a-11e8-914f-bcd7f9601ee8.png">
 
 - Filter the list of students to see which students belong in what period
-<img width="199" alt="screen shot 2018-06-15 at 3 57 09 pm" src="https://user-images.githubusercontent.com/26131912/41486803-cf6cc220-709a-11e8-92a1-1df42b0b9404.png">
+<img width="201" alt="screen shot 2018-06-15 at 3 57 14 pm" src="https://user-images.githubusercontent.com/26131912/41486875-0b4214a8-709b-11e8-9abf-30249ef2759d.png">
 
 This client uses:
 - react
