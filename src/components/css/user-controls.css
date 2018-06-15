@@ -34,6 +34,15 @@
     display: flex;
   }
 
+  .logout-button {
+    position: absolute;
+    width: 100px;
+    height: 25px;
+    top: 0px;
+    right: 0px;
+    background: white;
+  }
+
   .teacher-controls {
     display: flex;
     flex-direction: column;
