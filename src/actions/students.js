@@ -64,6 +64,29 @@ export const getAllPeriods = () => dispatch => {
   .catch(err => console.error(err));
 };
 
+// ==== DELETE A PERIOD FROM A STUDENT ================================
+export const DELETE_PERIOD_FROM_STUDENT_SUCCESS = 'DELETE_PERIOD_FROM_STUDENT_SUCCESS';
+export const deletePeriodFromStudentSuccess = () => ({
+  type: DELETE_PERIOD_FROM_STUDENT_SUCCESS,
+})
+
+export const deletePeriodFromStudent = (studentId, periodId) => (dispatch) => {
+  return fetch(`${API_BASE_URL}/api/students/${studentId}/periods/${periodId}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(res => res.json())
+  .then(() => {
+    dispatch(deletePeriodFromStudentSuccess())
+    return dispatch(listAllStudents());
+  })
+  .catch(err => console.error(err))
+}
+
+
+
 // DELETE A STUDENT
 export const DELETE_STUDENT_SUCCESS = 'DELETE_STUDENT_SUCCESS';
 export const deleteStudentSuccess = () => ({

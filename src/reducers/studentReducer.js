@@ -1,4 +1,4 @@
-import { GET_ALL_STUDENTS, GET_PERIODS_SUCCESS, DELETE_STUDENT_SUCCESS } from '../actions/students';
+import { GET_ALL_STUDENTS, GET_PERIODS_SUCCESS, DELETE_STUDENT_SUCCESS, DELETE_PERIOD_FROM_STUDENT_SUCCESS } from '../actions/students';
 import { FILTER_STUDENT_SUCCESS } from '../actions/users';
 
 export const initialState = {
@@ -30,6 +30,10 @@ export default (state = initialState, action) => {
     return Object.assign({}, state, {
       ...state
     });
+  }
+
+  if (action.type === DELETE_PERIOD_FROM_STUDENT_SUCCESS) {
+    return state;
   }
   return state;
 }

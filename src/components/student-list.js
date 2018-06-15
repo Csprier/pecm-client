@@ -4,7 +4,7 @@ import './css/student-list.css';
 import './css/studentrow.css';
 import avatar from './css/avatar.png';
 
-import { assignPeriodToStudent, deleteStudent } from '../actions/students';
+import { assignPeriodToStudent, deleteStudent, deletePeriodFromStudent } from '../actions/students';
 
 class StudentList extends React.Component {
   onChange(e, id) {
@@ -16,12 +16,9 @@ class StudentList extends React.Component {
     this.props.dispatch(deleteStudent(studentIdToBeDeleted.student));
   }
 
-  deletePeriod = () => {
-    console.log('deletePeriod button clicked');
-    const studentsPeriods = this.props.students.map(student => student.periods);
-    const periodIdToBeDeleted = studentsPeriods.find(period => period.id === this.periodNames);
-    console.log(periodIdToBeDeleted);
-    
+  deletePeriod = (student, period) => {
+    const periodId = this.props.periods.filter(peri => peri.name === period)[0].id;
+    this.props.dispatch(deletePeriodFromStudent(student.id, periodId));
   }
 
   removeDuplicates(arr) {
@@ -70,9 +67,8 @@ class StudentList extends React.Component {
                 {this.removeDuplicates(student.periodNames).map((period, i) => 
                 <p key={i}> 
                   {period} 
-                  <button className="delete-period-button" onClick={() => {this.deletePeriod()}}>X</button>
-                </p>
-              )}
+                  <button className="delete-period-button" onClick={() => this.deletePeriod(student, period)}>X</button>
+                </p>)}
             </div>
           </div>
           <button className="delete-student-button" onClick={() => {this.onClick()}} name="delete-student" type="button">X</button>
