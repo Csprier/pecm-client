@@ -16,6 +16,14 @@ class StudentList extends React.Component {
     this.props.dispatch(deleteStudent(studentIdToBeDeleted.student));
   }
 
+  deletePeriod = () => {
+    console.log('deletePeriod button clicked');
+    const studentsPeriods = this.props.students.map(student => student.periods);
+    const periodIdToBeDeleted = studentsPeriods.find(period => period.id === this.periodNames);
+    console.log(periodIdToBeDeleted);
+    
+  }
+
   removeDuplicates(arr) {
     let uniqueArray = [];
     for (let i = 0; i < arr.length; i++) {
@@ -59,10 +67,15 @@ class StudentList extends React.Component {
             </div>
 
             <div className="list-of-students-periods">
-                {this.removeDuplicates(student.periodNames).map((period, i) => <p key={i}> {period} </p>)}
+                {this.removeDuplicates(student.periodNames).map((period, i) => 
+                <p key={i}> 
+                  {period} 
+                  <button className="delete-period-button" onClick={() => {this.deletePeriod()}}>X</button>
+                </p>
+              )}
             </div>
           </div>
-          <button onClick={() => {this.onClick()}} name="delete-student" type="button">X</button>
+          <button className="delete-student-button" onClick={() => {this.onClick()}} name="delete-student" type="button">X</button>
           </li>)}
       </ul>
     );

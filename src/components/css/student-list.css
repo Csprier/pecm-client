@@ -10,14 +10,14 @@
     padding: 0px;
   }
 
-  .student-row button {
-    width: 25px;
-    height: 25px;
-    margin-top: 10px;
-  }
-
   .student-info h3 {
     color: black;
+  }
+
+  .delete-period-button {
+    width: 10px;
+    height: 10px;
+    margin-left: 15px;
   }
 }
 
@@ -31,5 +31,11 @@
   .student-list {
     width: 100%;
     padding: 0px;
+  }
+
+  .delete-period-button {
+    width: 10px;
+    height: 10px;
+    margin-left: 15px;
   }
 }

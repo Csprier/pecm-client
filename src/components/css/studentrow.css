@@ -17,6 +17,14 @@
     background-color: #193044;
   }
 
+  .delete-student-button {
+    width: 25px;
+    height: 25px;
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+
   .student-info {
     font-size: 10px;
   }
@@ -96,6 +104,12 @@
     margin: 0px;
     padding: 10px;
     background-color: #193044;
+  }
+
+  .delete-student-button {
+    width: 25px;
+    height: 25px;
+    margin-top: 10px;
   }
 
   .right-box {
