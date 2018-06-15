@@ -19,10 +19,10 @@ export const registerNewUserHandler = (username, password, fullname) => dispatch
     },
     body: JSON.stringify(newUser)
   })
-    .then(res => res.json())
-    .then(json => dispatch(registerNewUser(json)))
-    .then(() => dispatch(loginUserHandler(username, password)))
-    .catch(err => console.error(err));
+  .then(res => res.json())
+  .then(json => dispatch(registerNewUser(json)))
+  .then(() => dispatch(loginUserHandler(username, password)))
+  .catch(err => console.error(err));
 }
 
 // ---LOGIN ---------------------------------------------------------------------------------
@@ -33,7 +33,13 @@ export const loginUserSuccess = (username, token) => ({
   token
 })
 
-export const loginUserHandler = (username, password) => dispatch => {
+export const LOGIN_USER_FAILURE = 'LOGIN_USER_FAILURE';
+export const loginUserFailure = (error) => ({
+  type: LOGIN_USER_FAILURE,
+  error
+})
+
+export const loginUserHandler = (history, username, password) => dispatch => {
   const user = {
     username,
     password
@@ -50,10 +56,23 @@ export const loginUserHandler = (username, password) => dispatch => {
     mode: 'cors',
     body: JSON.stringify(user)
   })
-  .then(res => res.json())
+  .then(res => {
+    if (res.status !== 200) {
+      throw new Error ('Username or password is incorrect!');
+    }
+    return res.json()
+  })
   .then(({ authToken }) => dispatch(loginUserSuccess(username, authToken)))
-  .catch(err => console.error(err));
+  .then(() => history.push('/UserControls')) 
+  .catch(err => {
+    dispatch(loginUserFailure(err.message));
+  });
 }
+
+export const LOGOUT_USER = 'LOGOUT_USER';
+export const logoutUser = () => ({
+  type: LOGOUT_USER
+})
 
 // ---FILTER STUDENTS ---------------------------------------------------------------------------------
 export const FILTER_STUDENT_SUCCESS = 'FILTER_STUDENT_SUCCESS';

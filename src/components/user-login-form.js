@@ -1,13 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
 import './css/user-login-form.css'
-import { loginUserHandler } from '../actions/users'
-import { required, nonEmpty } from '../validators'
+import { loginUserHandler } from '../actions/users';
+import { required, nonEmpty } from '../validators';
+
 
 export class UserLogin extends React.Component {
   onSubmit(values) {
-    this.props.dispatch(loginUserHandler(values.username, values.password))
-     .then(() => this.props.history.push('/UserControls')) 
+    this.props.dispatch(loginUserHandler(this.props.history, values.username, values.password));
   }
 
   render() {
@@ -36,12 +37,17 @@ export class UserLogin extends React.Component {
             validate={[required, nonEmpty]}
           />
           <button name="submit-login" type="submit">LOG IN</button>
+          {this.props.loginFail}
         </form>
       </div>
     );
   }
 }
 
-export default reduxForm({
+const mapStateToProps = state => ({
+  loginFail: state.user.error
+})
+
+export default connect(mapStateToProps)(reduxForm({
   form: 'userLogin'
-})(UserLogin);
+})(UserLogin));

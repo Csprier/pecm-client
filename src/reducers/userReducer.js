@@ -1,4 +1,4 @@
-import { TOGGLE_CREATE_STUDENT_MODAL, REGISTER_NEW_USER, LOGIN_USER_SUCCESS, CREATE_STUDENT_SUCCESS } from '../actions/users';
+import { TOGGLE_CREATE_STUDENT_MODAL, REGISTER_NEW_USER, LOGIN_USER_SUCCESS, LOGIN_USER_FAILURE, CREATE_STUDENT_SUCCESS, LOGOUT_USER } from '../actions/users';
 
 const initialState = {
   modalView: false
@@ -24,7 +24,23 @@ export default (state=initialState, action) => {
     return Object.assign({}, state, {
       ...state,
       username: action.username,
-      token: action.token
+      token: action.token,
+      error: ''
+    });
+  }
+
+  if (action.type === LOGIN_USER_FAILURE) {
+    return {
+      ...state,
+      error: action.error
+    }
+  }
+
+  if (action.type === LOGOUT_USER) {
+    return Object.assign({}, state, {
+      ...state,
+      username: null,
+      token: null
     });
   }
 

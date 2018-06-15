@@ -13,7 +13,11 @@ class AddStudentToDatabase extends React.Component {
     return (
       <div className="add-student-form-container">
         <h5>Add Student To Database</h5>
-        {(this.props.modalView) ? <AddStudentModal /> : <button id="create-student-modal" onClick={() => this.onClick()}>ADD STUDENT</button>}
+        {
+          (this.props.modalView) 
+          ? <AddStudentModal /> 
+          : <button id="create-student-modal" onClick={() => this.onClick()}>ADD STUDENT</button>
+        }
       </div>
     );
   }

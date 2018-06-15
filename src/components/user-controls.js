@@ -6,6 +6,7 @@ import StudentList from './student-list';
 import AddStudentToDatabase from './addStudentToDatabase';
 import './css/student-list.css';
 import './css/user-controls.css';
+import { logoutUser } from '../actions/users';
 
 class UserControls extends React.Component {
   componentDidMount() {
@@ -13,9 +14,15 @@ class UserControls extends React.Component {
     this.props.dispatch(getAllPeriods());
   }
 
+  onClickLogout = () => {
+    this.props.dispatch(logoutUser())
+    this.props.history.push('/')
+  }
+
   render(){
     return (
       <div className="app-container" role="region" aria-labelledby="region1">
+        <button onClick={this.onClickLogout}>LogOut</button>
         <header role="banner">
           <h1>|| Teacher's Controls ||</h1>
         </header>
