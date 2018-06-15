@@ -12,6 +12,14 @@
   border-bottom: 1px solid black;
 }
 
+.logout-button {
+  position: absolute;
+  width: 200px;
+  height: 25px;
+  top: 0px;
+  right: 0px;
+}
+
 .teacher-controls {
   display: flex;
   justify-content: space-around;

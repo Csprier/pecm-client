@@ -22,7 +22,7 @@ class UserControls extends React.Component {
   render(){
     return (
       <div className="app-container" role="region" aria-labelledby="region1">
-        <button onClick={this.onClickLogout}>LogOut</button>
+        <button className="logout-button" onClick={this.onClickLogout}>LogOut</button>
         <header role="banner">
           <h1>|| Teacher's Controls ||</h1>
         </header>
