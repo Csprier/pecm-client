@@ -32,3 +32,7 @@ This client uses:
 
 Deployed version on Netlify!
 http://pecm.netlify.com/
+
+Demo Account:
+username: testUser
+password: password
