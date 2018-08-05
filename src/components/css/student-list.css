@@ -1,27 +1,24 @@
 /* MOBILE DIMENSIONS */
-@media screen and (min-width: 100px) {
+@media screen and (max-width: 400px) {
   .student-list-container {
-    display: flex;
-    width: 100%;
+   
   }
   
   .student-list {
-    width: 100%;
-    padding: 0px;
+    
   }
 
   .student-info h3 {
-    color: black;
+   
   }
 
   .delete-period-button {
-    width: 10px;
-    height: 10px;
-    margin-left: 15px;
+    
   }
 }
 
 /* DESKTOP DIMENSIONS */
+/*
 @media screen and (min-width: 1224px) {
   .student-list-container {
     display: flex;
@@ -34,8 +31,9 @@
   }
 
   .delete-period-button {
-    width: 10px;
-    height: 10px;
+    width: 23px;
+    height: 23px;
     margin-left: 15px;
   }
 }
+*/

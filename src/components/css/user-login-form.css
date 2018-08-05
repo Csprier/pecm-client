@@ -1,29 +1,21 @@
-@media screen and (min-width: 300px) {
+@media screen and (max-width: 400px) {
   .user-login-form {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     width: 150px;
-    margin: 0 auto;
-    margin-top: 20px;
-    padding-bottom: 10px;
-    text-align: center;
-    color: white;
-    border-top: 1px solid #69768c;
-    border-left: 1px solid #69768c;
-    border-right: 1px solid #69768c;
+    border: 1px solid red;
   }
 
   .user-login-form input {
-    width: 100px;
+    display: flex;
   }
-
 
   .user-login-form button {
-    margin-top: 5px;
+    display: flex;
   }
-
 }
 
-/* DESKTOP DIMENSIONS */
+/*
 @media screen and (min-width: 1224px) {
   .user-login-form {
     display: inline-block;
@@ -45,3 +37,4 @@
     margin-top: 5px;
   }
 }
+*/
