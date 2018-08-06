@@ -1,3 +1,4 @@
+/* MOBILE */
 @media screen and (max-width: 360px) {
   body {
     box-sizing: border-box;
@@ -9,20 +10,19 @@
   }
 
   .main-header {
-    text-align: center;
+    padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     margin: 0;
     background-color: #11202e;
     color: #cccccc;
+    font-size: 25px;
     border-bottom: 1px solid #cccccc;
   }
 
   .background-image-container {
     width: 100%;
     height: 226px;
-    /* background: url('https://images.unsplash.com/photo-1420547625303-0894752c1ffa?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1e4c4e7c47d5e3c4db4d12d92f06030b&auto=format&fit=crop&w=1653&q=80'); */
-    /* background-repeat: no-repeat; */
   }
 
   .background-image-container img {
@@ -32,12 +32,9 @@
   }
 
   .form-container {
-    display: flex;
-    justify-content: space-around;
     width: 100%;
     background-color: #cccccc;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 13px;
   }
 
   .app {
@@ -48,16 +45,49 @@
   }
 }
 
-/* @media screen and (min-width: 800px) {
+/* DESKTOP */
+@media screen and (min-width: 361px) {
   body {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: white;
+    color: black;
     font-family: sans-serif;
-    background: url('https://images.unsplash.com/photo-1420547625303-0894752c1ffa?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1e4c4e7c47d5e3c4db4d12d92f06030b&auto=format&fit=crop&w=1653&q=80') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background-color: #cccccc;
   }
-} */
+
+  .main-header {
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+    background-color: #11202e;
+    color: #cccccc;
+    font-size: 25px;
+    border-bottom: 1px solid #cccccc;
+  }
+
+  .background-image-container {
+    /* width: 100%; */
+    /* height: 226px; */
+    display: none;
+  }
+
+  .background-image-container img {
+    /* width: 100%; */
+    /* height: auto; */
+    /* opacity: 0.9; */
+  }
+
+  .form-container {
+    width: 100%;
+    background-color: #cccccc;
+  }
+
+  .app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  } 
+}

@@ -17,40 +17,55 @@
 
   .logout-button {
     position: absolute;
-    width: 200px;
     height: 25px;
     top: 0px;
     right: 0px;
+    color: #cccccc;
   }
 
   .teacher-controls {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 98%;
     padding: 5px;
     background-color: #11202e;
     color: #cccccc;
   }
 }
 
-/*
-@media only screen and (max-width: 600px) {container {
+/* DESKTOP */
+@media screen and (min-width: 361px) {
+  .container {
     width: 100%;
-    display: flex;
+    margin: 0 auto;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
   }
 
-  .logout-button { position: absolute;
-    width: 100px;
+  .container h1 {
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    font-size: 25px;
+    color: white;
+    border-bottom: 1px solid black;
+  }
+
+  .logout-button {
+    position: absolute;
     height: 25px;
     top: 0px;
     right: 0px;
-    background: white;
+    /* color: #cccccc; */
   }
 
   .teacher-controls {
     display: flex;
-    flex-direction: column;
-    width: 98%;
+    justify-content: space-around;
+    /* width: 40%; */
+    /* height: 50px; */
+    margin: 0 auto;
+    background-color: #11202e;
+    color: #cccccc;
   }
 }
-*/
