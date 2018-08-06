@@ -1,5 +1,5 @@
 /* MOBILE DIMENSIONS */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 360px) {
   .student-list-container {
     width: 100%;
   }

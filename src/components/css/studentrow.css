@@ -1,5 +1,5 @@
 /* MOBILE */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 360px) {
   .student-row {
     display: flex;
     justify-content: space-around;
