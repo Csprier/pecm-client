@@ -11,7 +11,7 @@ export class Filter extends React.Component {
   render() {
     return (
       <div className="period-filter-select-container" role="region" aria-labelledby="region2">
-        <h5>Filter Students by Period</h5>
+        <h5>Filter by Period</h5>
         <select htmlFor="periodfilterselect"className="period-filter-select" name="select" onChange={(e) => this.filterStudentsByPeriod(e)}>
           <option>SELECT PERIOD</option>
           {this.props.periods.map((period, i) => <option key={i} value={period.id}>{period.name}</option>)}

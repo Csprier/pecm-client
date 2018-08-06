@@ -21,14 +21,11 @@ class UserControls extends React.Component {
 
   render(){
     return (
-      <div className="app-container" role="region" aria-labelledby="region1">
+      <div className="container" role="region" aria-labelledby="region1">
         <button className="logout-button" onClick={this.onClickLogout}>LogOut</button>
-        <header role="banner">
-          <h1>|| Teacher's Controls ||</h1>
-        </header>
         <div className="teacher-controls">
-          <AddStudentToDatabase />
           <Filter />
+          <AddStudentToDatabase />
         </div>
         <div className="student-list-container" role="region" aria-labelledby="region3">
           <StudentList />

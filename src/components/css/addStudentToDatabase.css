@@ -6,6 +6,10 @@
   width: 200px;
   height: auto;
   margin: 10px 0px 10px 0px;
-  border: 2px solid white;
   border-radius: 5px;
+}
+
+.add-student-form-container button {
+  border: 1px solid white;
+  margin-right: 20px;
 }

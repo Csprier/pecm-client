@@ -1,10 +1,12 @@
 @media only screen and (max-width: 400px) {
-  .app_container {
+  .container {
     width: 100%;
     margin: 0 auto;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
   }
 
-  .app-container h1 {
+  .container h1 {
     margin: 0;
     padding: 20px;
     width: 100%;
@@ -23,21 +25,21 @@
 
   .teacher-controls {
     display: flex;
-    justify-content: space-around;
-    width: 50%;
-    margin: 0 auto;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px;
+    background-color: #11202e;
+    color: #cccccc;
   }
 }
 
 /*
-@media only screen and (max-width: 600px) {
-  .app_container {
+@media only screen and (max-width: 600px) {container {
     width: 100%;
     display: flex;
   }
 
-  .logout-button {
-    position: absolute;
+  .logout-button { position: absolute;
     width: 100px;
     height: 25px;
     top: 0px;

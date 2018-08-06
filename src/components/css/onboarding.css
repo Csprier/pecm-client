@@ -1,12 +1,19 @@
 .onboarding-content {
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
 }
 
 .onboarding-content h2 {
-  padding: 5px 0px 5px 0px;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0;
+  background-color: #11202e;
+  color: #cccccc;
+  border-bottom: 1px solid #cccccc;
 }
 
-
+.onboarding-content p {
+  padding-left: 10px;
+  padding-right: 10px;
+}

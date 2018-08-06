@@ -12,9 +12,7 @@ class AddStudentModal extends React.Component {
   render() {
     return(
       <div className="modal">
-        <button className="close-modal-btn" name="close-modal-button" type="button" onClick={() => this.onClick()}>X</button>
         <form onSubmit={this.props.handleSubmit(values => {
-          // Mind the chain of promises
             this.props.dispatch(createStudent(values.firstname, values.lastname))
             .then(() => this.props.dispatch(listAllStudents()))
             .then(() => this.props.dispatch(getAllPeriods()))
@@ -24,9 +22,7 @@ class AddStudentModal extends React.Component {
             <tbody>
               <tr>
                 <td>
-                  <label htmlFor="createfirstname">First Name</label>
-                </td>
-                <td>
+                  <label htmlFor="createfirstname">First Name
                   <Field
                     aria-label="createfirstname"
                     name="firstname" 
@@ -34,14 +30,13 @@ class AddStudentModal extends React.Component {
                     type="text" 
                     component="input" 
                   />
+                  </label>
                 </td>
               </tr>
 
               <tr>
                 <td>
-                  <label htmlFor="createlastname">Last Name</label>
-                </td>
-                <td>
+                  <label htmlFor="createlastname">Last Name
                   <Field 
                     aria-label="createlastname"
                     name="lastname" 
@@ -49,13 +44,17 @@ class AddStudentModal extends React.Component {
                     type="text" 
                     component="input"
                     />
+                    </label>
                 </td>
               </tr>
+
               <tr>
                 <td>
+                  <button className="close-modal-btn" name="close-modal-button" type="button" onClick={() => this.onClick()}>Cancel</button>
                   <button className="modal-button" name="submit-new-student" type="submit">SUBMIT</button>
                 </td>
               </tr>
+
             </tbody>
           </table>
         </form>

@@ -1,8 +1,8 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
-import './css/user-creation-form.css'
 import { required, nonEmpty } from '../validators'
 import { registerNewUserHandler } from '../actions/users';
+import './css/user-creation-form.css'
 
 export class UserCreation extends React.Component {
   onSubmit(values) {

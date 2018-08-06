@@ -21,8 +21,10 @@ ReactDOM.render(
           <img src='https://images.unsplash.com/photo-1420547625303-0894752c1ffa?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1e4c4e7c47d5e3c4db4d12d92f06030b&auto=format&fit=crop&w=1653&q=80' alt="background" />
         </div>
         <main role="main">
-          <Route exact path="/" component={UserCreation} /> 
-          <Route exact path="/" component={UserLogin} />
+          <div className="form-container">
+            <Route exact path="/" component={UserCreation} /> 
+            <Route exact path="/" component={UserLogin} />
+          </div>
           <Route exact path="/" component={Onboarding} />
           <Route path="/UserControls" component={UserControls} />            
         </main>

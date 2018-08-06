@@ -18,5 +18,4 @@ export class Onboarding extends React.Component {
   }
 }
 
-
 export default connect()(Onboarding);

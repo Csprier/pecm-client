@@ -65,7 +65,7 @@ class StudentList extends React.Component {
 
             <div className="list-of-students-periods">
                 {this.removeDuplicates(student.periodNames).map((period, i) => 
-                <p key={i}> 
+                <p key={i} className="bbb"> 
                   {period} 
                   <button className="delete-period-button" onClick={() => this.deletePeriod(student, period)}>X</button>
                 </p>)}
